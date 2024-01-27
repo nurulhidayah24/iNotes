@@ -47,15 +47,15 @@ class _SplashScreenState extends State<SplashScreen>
         child:  Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            CircleAvatar(
-              radius: 150,
-              backgroundColor: Colors.transparent,
-              backgroundImage: AssetImage('lib/images/logoinotes.jpg'
+              Image.asset(
+              'lib/images/logoinotes.png',
+              height: 250.0,
+              width: 150.0,
+              //fit: BoxFit.cover,
               ),
-            ),
             SizedBox(height: 7),
             Text('Welcome !',
-              style: GoogleFonts.openSans(color: Colors.redAccent, fontSize: 35, fontWeight: FontWeight.bold ),
+              style: GoogleFonts.pacifico(color: Colors.black, fontSize: 40, fontWeight: FontWeight.bold ),
             ),
           ],
         ),

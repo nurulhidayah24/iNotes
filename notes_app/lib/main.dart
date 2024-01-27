@@ -1,4 +1,3 @@
-import 'dart:js';
 
 import 'package:flutter/material.dart';
 import 'package:notes_app/Database/DbNotes.dart';
@@ -33,7 +32,7 @@ class MyApp extends StatelessWidget {
 }
 
 class HomePage extends StatelessWidget{
-  const HomePage ({Key? key}) : super(key: key);
+  const HomePage ({super.key});
 
 
   @override
@@ -42,44 +41,42 @@ class HomePage extends StatelessWidget{
       title: const Text('Welcome'),
       backgroundColor: Colors.greenAccent.shade700,
     ),
-    body: SingleChildScrollView( // Wrap the Column with SingleChildScrollView
-      child: Column(
+    body: Column(
         children: [
-          Padding(
-            padding: EdgeInsets.all(20),
-            child: Text(
-              "Your iNotes ",
-              style: TextStyle(
-                color: Colors.green[700],
-                fontWeight: FontWeight.bold,
-                fontSize: 20,
-              ),
-            ),
-          ),
+    Padding(padding: const EdgeInsets.all(20),
+      child: Text("Your iNotes ",
+      style: TextStyle(
+        color: Colors.green[700],
+        fontWeight: FontWeight.bold,
+        fontSize: 20,
+      ),
+    ),
+  ),
 
-          SizedBox(
+        SizedBox(
             height: 750,
             width: double.infinity,
             child: AnotherCarousel(
-              images: const [
-                AssetImage("lib/images/bunga.jpg"),
-                AssetImage("lib/images/bunga1.jpeg"),
-                AssetImage("lib/images/bunga2.jpeg"),
-                AssetImage("lib/images/bunga4.jpeg"),
-              ],
-              dotSize: 6,
-              indicatorBgPadding: 5.0,
-            ),
-          ),
+            images: const[
+            AssetImage("lib/images/bunga.jpg"),
+            AssetImage("lib/images/2.jpg"),
+            AssetImage("lib/images/3.jpg"),
+            AssetImage("lib/images/4.jpg"),
         ],
-      ),
-    ),
-    drawer: const NavigationDrawer(),
-  );
+        dotSize:6,
+        indicatorBgPadding: 5.0,
+        ),
+        )
+
+        ],
+        ),
+        drawer: const NavigationDrawer(),
+        );
+
 }
 
 class NavigationDrawer extends StatelessWidget {
-  const NavigationDrawer({Key? key}) : super(key: key);
+  const NavigationDrawer({super.key});
 
   @override
   Widget build(BuildContext context) => Drawer(
@@ -109,24 +106,21 @@ class NavigationDrawer extends StatelessWidget {
           bottom: 24,
         ),
         child: Column(
-          children: const[
-            CircleAvatar(
-              radius: 52,
-              backgroundImage: AssetImage('lib/images/logoinotes.jpg'
+          children: [
+          Image.asset(
+            'lib/images/logoinotes.png',
+            height: 150.0,
+            width: 150.0,
               ),
-            ),
-            SizedBox(height: 12),
-            Text(
-              'iNotes',
-              style: TextStyle(fontSize: 28, color: Colors.white
+            const SizedBox(height: 12),
 
-              ),
-            )
+
           ],
         ),
       ),
     ),
   );
+
 
   Widget buildMenuItems(BuildContext context) => Container(
       padding:const EdgeInsets.all(24),

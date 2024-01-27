@@ -72,7 +72,7 @@ class _RegistrationState extends State<Registration> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(height: 10.0),
-                  Image.asset('lib/images/logoinotes.jpg',
+                  Image.asset('lib/images/logoinotes.png',
                     height: 150.0,
                     width: 150.0,
                   ),

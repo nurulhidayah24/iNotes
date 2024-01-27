@@ -8,7 +8,7 @@ class UserPage extends StatelessWidget {
     appBar: AppBar(
       title: const Text('iNotes'),
     ),
-    body: Image.asset('lib/images/logoinotes.jpg'
+    body: Image.asset('lib/images/logoinotes.png'
     ),
   );
 }
