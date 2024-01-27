@@ -73,7 +73,7 @@ class _RegistrationState extends State<Registration> {
                 children: [
                   SizedBox(height: 10.0),
                   Image.asset('lib/images/logoinotes.png',
-                    height: 150.0,
+                    height: 250.0,
                     width: 150.0,
                   ),
 
