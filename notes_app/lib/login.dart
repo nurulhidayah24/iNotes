@@ -3,8 +3,8 @@ import 'package:notes_app/Comm/comHelper.dart';
 import 'package:notes_app/registration.dart';
 import 'package:notes_app/Comm/genTextFormField.dart';
 import 'Database/DbHelper.dart';
+import 'DisplayNotes.dart';
 import 'Model/UserModel.dart';
-import 'iNotesPage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Login extends StatefulWidget {
@@ -40,7 +40,7 @@ class _LoginState extends State<Login> {
         if(userData != null) {
           setSP(userData).whenComplete(() {
             Navigator.pushAndRemoveUntil(
-                context, MaterialPageRoute(builder: (_) => iNotesPage()),
+                context, MaterialPageRoute(builder: (_) => DisplayNotes()),
                     (Route<dynamic> route) => false);
           });
         }else {
@@ -79,25 +79,25 @@ class _LoginState extends State<Login> {
               children: [
                 SizedBox(height: 10.0),
                 Image.asset('lib/images/logoinotes.jpg',
-                height: 150.0,
+                  height: 150.0,
                   width: 150.0,
                 ),
 
                 /*    textfield untuk userid*/
                 getTextFormField(
-                    controller: _conUserId,
-                    icon: Icons.person,
-                    hintName: 'User ID',
-                  isObscureText: false,
+                  controller: _conUserId,
+                  icon: Icons.person,
+                  hintName: 'User ID',
+                  isObsecureText: false,
                 ),
                 SizedBox(height: 10.0),
 
                 /*    textfield untuk password*/
                 getTextFormField(
-                    controller: _conPassword,
-                    icon: Icons.lock,
-                    hintName: 'Password',
-                    isObscureText: true,
+                  controller: _conPassword,
+                  icon: Icons.lock,
+                  hintName: 'Password',
+                  isObsecureText: true,
                 ),
 
                 /*    button untuk login*/
@@ -106,8 +106,8 @@ class _LoginState extends State<Login> {
                   width: double.infinity,
                   child: TextButton(
                     child:Text(
-                        'Login',
-                    style: TextStyle(color: Colors.white),
+                      'Login',
+                      style: TextStyle(color: Colors.white),
                     ),
                     onPressed: login,
                   ),
@@ -119,24 +119,24 @@ class _LoginState extends State<Login> {
 
                 /*    signup untuk intent*/
                 Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text('Does not have account ?'),
-                        TextButton(
-                          child: Text('Signup',
-                              style: TextStyle(
-                                color: Colors.blue,
-                              )
-                          ),
-                          onPressed:(){
-                            Navigator.push(context,
-                                MaterialPageRoute(builder: (_) => Registration()));
-                          },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text('Does not have account ?'),
+                      TextButton(
+                        child: Text('Signup',
+                            style: TextStyle(
+                              color: Colors.blue,
+                            )
                         ),
-                      ],
-                    ),
+                        onPressed:(){
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (_) => Registration()));
+                        },
+                      ),
+                    ],
                   ),
+                ),
               ],
             ),
           ),

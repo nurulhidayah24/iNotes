@@ -40,6 +40,9 @@ dependencies:
   path_provider: ^2.1.2
   toast: ^0.3.0
   shared_preferences: ^2.2.2
+  js: ^0.7.0
+  another_carousel_pro: ^1.0.2
+  google_fonts: ^6.1.0
 
 dev_dependencies:
   flutter_test:
@@ -67,6 +70,10 @@ flutter:
   assets:
     - lib/images/menu.jpg
     - lib/images/logoinotes.jpg
+    - lib/images/bunga.jpg
+    - lib/images/bunga1.jpeg
+    - lib/images/bunga2.jpeg
+    - lib/images/bunga4.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:notes_app/main.dart';
 
 
 class SplashScreen extends StatefulWidget {
-  const SplashScreen({super.key});
+  SplashScreen({Key? key}) : super(key: key);
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();
-  }
+}
 
 class _SplashScreenState extends State<SplashScreen>
-  with SingleTickerProviderStateMixin{
+    with SingleTickerProviderStateMixin{
 
   @override
   void initState() {
@@ -19,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen>
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
     Future.delayed(const Duration(seconds: 4), () {
       Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (_) => const HomePage())
+          MaterialPageRoute(builder: (_) => const HomePage())
       );
     });
   }
@@ -27,7 +28,7 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   void dispose() {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
-    overlays: SystemUiOverlay.values);
+        overlays: SystemUiOverlay.values);
   }
 
   @override
@@ -37,24 +38,25 @@ class _SplashScreenState extends State<SplashScreen>
       body: Container(
         width: double.infinity,
         decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Colors.white, Colors.greenAccent],
-            begin: Alignment.topRight,
-            end: Alignment.bottomLeft
-          )
+            gradient: LinearGradient(
+                colors: [Colors.white, Colors.greenAccent],
+                begin: Alignment.topRight,
+                end: Alignment.bottomLeft
+            )
         ),
-        child: const Column(
+        child:  Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CircleAvatar(
-              radius: 100,
+              radius: 150,
+              backgroundColor: Colors.transparent,
               backgroundImage: AssetImage('lib/images/logoinotes.jpg'
               ),
             ),
             SizedBox(height: 7),
             Text('Welcome !',
-            style: TextStyle(color: Colors.redAccent, fontSize: 35),
-            )
+              style: GoogleFonts.openSans(color: Colors.redAccent, fontSize: 35, fontWeight: FontWeight.bold ),
+            ),
           ],
         ),
       ),

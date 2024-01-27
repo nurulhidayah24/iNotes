@@ -1,10 +1,16 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
+import 'package:notes_app/Database/DbNotes.dart';
 import 'package:notes_app/UserPage.dart';
 import 'package:notes_app/registration.dart';
 import 'SplashScreen.dart';
+import 'package:another_carousel_pro/another_carousel_pro.dart';
 import 'login.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await NotesDatabase.initialiseDatabase();
   runApp(const MyApp());
 }
 
@@ -21,19 +27,52 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightBlue),
         useMaterial3: true,
       ),
-      home: const SplashScreen(),
+      home:  SplashScreen(),
     );
   }
 }
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatelessWidget{
   const HomePage ({Key? key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) => Scaffold(
     appBar: AppBar(
-      title: const Text('Home'),
+      title: const Text('Welcome'),
       backgroundColor: Colors.greenAccent.shade700,
+    ),
+    body: SingleChildScrollView( // Wrap the Column with SingleChildScrollView
+      child: Column(
+        children: [
+          Padding(
+            padding: EdgeInsets.all(20),
+            child: Text(
+              "Your iNotes ",
+              style: TextStyle(
+                color: Colors.green[700],
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+              ),
+            ),
+          ),
+
+          SizedBox(
+            height: 750,
+            width: double.infinity,
+            child: AnotherCarousel(
+              images: const [
+                AssetImage("lib/images/bunga.jpg"),
+                AssetImage("lib/images/bunga1.jpeg"),
+                AssetImage("lib/images/bunga2.jpeg"),
+                AssetImage("lib/images/bunga4.jpeg"),
+              ],
+              dotSize: 6,
+              indicatorBgPadding: 5.0,
+            ),
+          ),
+        ],
+      ),
     ),
     drawer: const NavigationDrawer(),
   );
@@ -129,8 +168,3 @@ class NavigationDrawer extends StatelessWidget {
   );
 
 }
-
-
-
-
-

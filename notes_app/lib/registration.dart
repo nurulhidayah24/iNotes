@@ -76,54 +76,54 @@ class _RegistrationState extends State<Registration> {
                     height: 150.0,
                     width: 150.0,
                   ),
-        
+
                   /*    textfield untuk userid*/
                   getTextFormField(
                     controller: _conUserId,
                     icon: Icons.person,
                     hintName: 'User ID',
-                    isObscureText: false,
+                    isObsecureText: false,
                   ),
                   SizedBox(height: 10.0),
-        
+
                   /*    textfield untuk name*/
                   getTextFormField(
                     controller: _conname,
                     icon: Icons.person_outline,
                     inputType: TextInputType.name,
                     hintName: 'Name',
-                    isObscureText: false,
+                    isObsecureText: false,
                   ),
                   SizedBox(height: 10.0),
-        
+
                   /*    textfield untuk email*/
                   getTextFormField(
                     controller: _conEmail,
                     icon: Icons.email,
                     inputType: TextInputType.emailAddress,
                     hintName: 'Email',
-                    isObscureText: false,
+                    isObsecureText: false,
                   ),
                   SizedBox(height: 10.0),
-        
+
                   /*    textfield untuk password*/
                   getTextFormField(
                     controller: _conPassword,
                     icon: Icons.lock,
                     hintName: 'Password',
-                    isObscureText: true,
+                    isObsecureText: true,
                   ),
 
                   SizedBox(height: 10.0),
-        
+
                   /*    textfield untuk confirm password*/
                   getTextFormField(
                     controller: _conConfirmPassword,
                     icon: Icons.lock_outline,
                     hintName: 'Confirm Password',
-                    isObscureText: true,
+                    isObsecureText: true,
                   ),
-        
+
                   /*    button untuk login*/
                   Container(
                     margin: EdgeInsets.all(30.0),

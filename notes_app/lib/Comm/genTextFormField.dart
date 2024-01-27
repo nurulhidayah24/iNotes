@@ -5,7 +5,7 @@ class getTextFormField extends StatelessWidget {
   TextEditingController controller;
   String hintName;
   IconData icon;
-  bool isobscureText;
+  bool isObsecureText;
   TextInputType inputType;
   bool isEnable;
 
@@ -13,8 +13,7 @@ class getTextFormField extends StatelessWidget {
       { required this.controller,
         required this.hintName,
         required this.icon,
-        this.isobscureText = false,
-        required bool isObscureText,
+        required this.isObsecureText,
         this.inputType = TextInputType.text,
         this.isEnable = true});
 
@@ -24,7 +23,7 @@ class getTextFormField extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 20.0),
       child: TextFormField(
         controller: controller,
-        obscureText: isobscureText,
+        obscureText: isObsecureText,
         enabled: isEnable,
         keyboardType: inputType,
         validator: (value) {
@@ -34,7 +33,7 @@ class getTextFormField extends StatelessWidget {
           if(hintName == "Email" && !validateEmail(value)) {
             return 'Please Enter Valid Email !';
           }
-         return null;
+          return null;
         },
         decoration: InputDecoration(
           enabledBorder: OutlineInputBorder(
